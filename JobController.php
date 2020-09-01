@@ -317,6 +317,7 @@ protected function getZoomToken()
     curl_close($curl);
     $result = json_decode($data);
 //        update refresh_token to db
+    //eyJhbGciOiJIUzUxMiIsInYiOiIyLjAiLCJraWQiOiJiNTM4YmNjMy1jYmQwLTQ2YzItYTcwOC1iOTI0Yjk5ZDYzMGIifQ.eyJ2ZXIiOjcsImF1aWQiOiJjMzNkMjZiMWY5OTlkNjc0NGIzNzkwZGNiMDEzY2VlMSIsImNvZGUiOiJJeEsyVjlwS3VNX040eW5BZGVUU1JPNGtnNEVudlJNbHciLCJpc3MiOiJ6bTpjaWQ6dVFRdWJJZk9UOGVOb19rcUdTNFZRZyIsImdubyI6MCwidHlwZSI6MSwidGlkIjoxMTEsImF1ZCI6Imh0dHBzOi8vb2F1dGguem9vbS51cyIsInVpZCI6Ik40eW5BZGVUU1JPNGtnNEVudlJNbHciLCJuYmYiOjE1OTg4NjEyNzMsImV4cCI6MjA3MTkwMTI3MywiaWF0IjoxNTk4ODYxMjczLCJhaWQiOiJLNjNnT0xrdlJqZURXbzBfTW1BYnNBIiwianRpIjoiNzIzMzJhOTItYWMxYS00Y2EyLTgxMzctMDliZmYwNjdiNjYyIn0.m-XE9i5Guy68_wp4LQgxWdQwfiknXXlWqwlQM9MKojYILzd3ic3ZgsptuV91eDA5TfIuHpVn5WGWayU3QtQPlA
     DB::table('zoom_api')->where('id', '=', 1)->update([
         'refresh_token' => $result->refresh_token,
     ]);
